@@ -1,5 +1,6 @@
 [
   {
+    "collection": 1,
     "character": "木",
     "pinyin": "mù",
     "tone": 4,
@@ -14,6 +15,7 @@
     "simon_sketch": null
   },
   {
+    "collection": 1,
     "character": "好",
     "pinyin": "hǎo",
     "tone": 3,
@@ -28,6 +30,7 @@
     "simon_sketch": null
   },
   {
+    "collection": 1,
     "character": "人",
     "pinyin": "rén",
     "tone": 2,
@@ -42,6 +45,7 @@
     "simon_sketch": null
   },
   {
+    "collection": 1,
     "character": "月",
     "pinyin": "yuè",
     "tone": 4,
@@ -56,6 +60,7 @@
     "simon_sketch": null
   },
   {
+    "collection": 1,
     "character": "山",
     "pinyin": "shān",
     "tone": 1,
@@ -66,6 +71,81 @@
     "related_characters": ["出", "岛", "峰"],
     "tang_usage": null,
     "modern_phrases": ["山水 (shānshuǐ) — landscape (mountain-water)", "上山 (shàngshān) — go up the mountain"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "collection": 2,
+    "character": "水",
+    "pinyin": "shuǐ",
+    "tone": 3,
+    "meaning": "water",
+    "components": ["水"],
+    "component_notes": "Pictograph of flowing water — a central current with smaller streams or droplets on each side",
+    "ancient_form_notes": "Oracle-bone forms show a winding stream with marks for eddies or droplets",
+    "related_characters": ["河", "海", "湖", "冰", "永"],
+    "tang_usage": null,
+    "modern_phrases": ["喝水 (hē shuǐ) — drink water", "水果 (shuǐguǒ) — fruit"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "collection": 2,
+    "character": "火",
+    "pinyin": "huǒ",
+    "tone": 3,
+    "meaning": "fire / flame",
+    "components": ["火"],
+    "component_notes": "Pictograph of flames rising from a central fire",
+    "ancient_form_notes": "Oracle-bone forms show a central flame with smaller tongues of fire on each side",
+    "related_characters": ["炎", "灯", "热", "烧", "秋"],
+    "tang_usage": null,
+    "modern_phrases": ["火车 (huǒchē) — train", "火山 (huǒshān) — volcano"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "collection": 2,
+    "character": "口",
+    "pinyin": "kǒu",
+    "tone": 3,
+    "meaning": "mouth / opening",
+    "components": ["口"],
+    "component_notes": "Pictograph of an open mouth — the square outline marks its boundary",
+    "ancient_form_notes": "Early forms are a simple rounded or rectangular outline of a mouth",
+    "related_characters": ["吃", "喝", "叫", "问", "品"],
+    "tang_usage": null,
+    "modern_phrases": ["入口 (rùkǒu) — entrance", "人口 (rénkǒu) — population"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "collection": 2,
+    "character": "心",
+    "pinyin": "xīn",
+    "tone": 1,
+    "meaning": "heart / mind",
+    "components": ["心"],
+    "component_notes": "Pictograph of the heart, extended to feelings, thought, and intention",
+    "ancient_form_notes": "Early forms curve around a central mark, suggesting the physical heart and its chambers",
+    "related_characters": ["想", "意", "思", "情", "忘"],
+    "tang_usage": null,
+    "modern_phrases": ["小心 (xiǎoxīn) — be careful", "开心 (kāixīn) — happy"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "collection": 2,
+    "character": "手",
+    "pinyin": "shǒu",
+    "tone": 3,
+    "meaning": "hand",
+    "components": ["手"],
+    "component_notes": "Pictograph of a hand with fingers above the palm and wrist; its side form is 扌",
+    "ancient_form_notes": "Early forms show the outline of a palm, several fingers, and a wrist",
+    "related_characters": ["打", "拿", "看", "拜", "掌"],
+    "tang_usage": null,
+    "modern_phrases": ["手机 (shǒujī) — mobile phone", "手工 (shǒugōng) — handmade / handicraft"],
     "simon_notes": "",
     "simon_sketch": null
   }

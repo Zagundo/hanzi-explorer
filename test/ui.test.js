@@ -18,6 +18,14 @@ test("hero copy reflects the collection's continuing purpose", async () => {
   assert.doesNotMatch(html, />Look closer\.</);
 });
 
+test("the gallery provides separate numbered collection groups", async () => {
+  const html = await readProjectFile("app/index.html");
+
+  assert.match(html, /id="character-collections"/);
+  assert.match(html, /id="collection-mark"/);
+  assert.doesNotMatch(html, /id="character-grid"/);
+});
+
 test("the interface uses the locally hosted Noto Serif SC subset", async () => {
   const css = await readProjectFile("app/styles.css");
   const font = await readFile(
