@@ -3,6 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "font:subset": "node scripts/update-font-subset.mjs",
     "test": "node --test"
   }
 }
