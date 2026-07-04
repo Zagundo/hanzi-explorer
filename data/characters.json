@@ -1,0 +1,72 @@
+[
+  {
+    "character": "木",
+    "pinyin": "mù",
+    "tone": 4,
+    "meaning": "tree / wood",
+    "components": ["木"],
+    "component_notes": "Pictograph of a tree — trunk, branches up, roots down",
+    "ancient_form_notes": "Oracle bone shows a tree with roots and branches symmetrically",
+    "related_characters": ["林", "森", "板", "校", "桌"],
+    "tang_usage": null,
+    "modern_phrases": ["木头 (mùtou) — wood/block", "木工 (mùgōng) — carpentry"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "character": "好",
+    "pinyin": "hǎo",
+    "tone": 3,
+    "meaning": "good / well",
+    "components": ["女", "子"],
+    "component_notes": "woman 女 + child 子. Historically: mother and child = good",
+    "ancient_form_notes": "Bronze script shows a woman holding a child",
+    "related_characters": ["你好", "好吃", "很好"],
+    "tang_usage": null,
+    "modern_phrases": ["你好 (nǐhǎo) — hello", "好吃 (hǎochī) — delicious"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "character": "人",
+    "pinyin": "rén",
+    "tone": 2,
+    "meaning": "person / human",
+    "components": ["人"],
+    "component_notes": "Pictograph of a person walking — two legs in profile",
+    "ancient_form_notes": "Oracle bone is clearly a walking figure in side profile",
+    "related_characters": ["大", "个", "从", "众"],
+    "tang_usage": null,
+    "modern_phrases": ["人们 (rénmen) — people", "好人 (hǎorén) — good person"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "character": "月",
+    "pinyin": "yuè",
+    "tone": 4,
+    "meaning": "moon / month",
+    "components": ["月"],
+    "component_notes": "Pictograph of a crescent moon — the two lines inside represent its glow",
+    "ancient_form_notes": "Oracle bone shows a simple crescent. Compare to 日 (sun) which is full circle",
+    "related_characters": ["明", "朋", "期"],
+    "tang_usage": "月 appears constantly in Tang poetry — Li Bai's most famous poem begins 床前明月光",
+    "modern_phrases": ["月亮 (yuèliang) — moon", "月份 (yuèfèn) — month"],
+    "simon_notes": "",
+    "simon_sketch": null
+  },
+  {
+    "character": "山",
+    "pinyin": "shān",
+    "tone": 1,
+    "meaning": "mountain",
+    "components": ["山"],
+    "component_notes": "Pictograph of three mountain peaks — centre peak tallest",
+    "ancient_form_notes": "Oracle bone is almost identical to the modern character. Very direct pictograph.",
+    "related_characters": ["出", "岛", "峰"],
+    "tang_usage": null,
+    "modern_phrases": ["山水 (shānshuǐ) — landscape (mountain-water)", "上山 (shàngshān) — go up the mountain"],
+    "simon_notes": "",
+    "simon_sketch": null
+  }
+]
