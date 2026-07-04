@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A personal atlas for exploring Chinese characters."
+    />
+    <meta name="theme-color" content="#f3eddf" />
+    <title>Hanzi Explorer</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="wordmark" href="./" aria-label="Hanzi Explorer home">
+          <span class="wordmark-mark" aria-hidden="true">字</span>
+          <span>
+            <strong>Hanzi Explorer</strong>
+            <small>Personal character atlas</small>
+          </span>
+        </a>
+        <p class="collection-mark">Collection 01</p>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="page-title">
+          <p class="eyebrow">Five studies in form and meaning</p>
+          <h1 id="page-title">Look closer.</h1>
+          <p class="hero-copy">
+            Every character carries a picture, a history, and a way of seeing.
+            Choose a specimen to begin.
+          </p>
+        </section>
+
+        <section class="collection" aria-labelledby="collection-title">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">The collection</p>
+              <h2 id="collection-title">Character specimens</h2>
+            </div>
+            <p id="collection-count" class="collection-count" aria-live="polite">
+              Loading…
+            </p>
+          </div>
+
+          <div id="status" class="status" role="status">
+            Opening the specimen cabinet…
+          </div>
+          <ul id="character-grid" class="character-grid" aria-live="polite"></ul>
+
+          <noscript>
+            <p class="status status-error">
+              Hanzi Explorer needs JavaScript enabled to display the collection.
+            </p>
+          </noscript>
+        </section>
+      </main>
+
+      <footer>
+        <p>Built slowly, one character at a time.</p>
+        <span aria-hidden="true">木 · 人 · 月 · 山</span>
+      </footer>
+    </div>
+
+    <dialog id="specimen-dialog" class="specimen-dialog">
+      <article class="specimen">
+        <header class="specimen-header">
+          <p class="specimen-index" id="specimen-index">Specimen</p>
+          <button
+            id="close-specimen"
+            class="close-button"
+            type="button"
+            aria-label="Close character specimen"
+          >
+            <span aria-hidden="true">×</span>
+          </button>
+        </header>
+
+        <div class="specimen-identity">
+          <div class="character-stage">
+            <span id="specimen-character" lang="zh-Hans"></span>
+          </div>
+          <div class="identity-copy">
+            <p id="specimen-pinyin" class="specimen-pinyin"></p>
+            <h2 id="specimen-meaning"></h2>
+            <p id="specimen-tone" class="tone-label"></p>
+          </div>
+        </div>
+
+        <div class="specimen-details">
+          <section aria-labelledby="components-title">
+            <p class="detail-number">01</p>
+            <h3 id="components-title">Anatomy</h3>
+            <ul id="specimen-components" class="component-list"></ul>
+            <p id="specimen-component-notes" class="detail-copy"></p>
+          </section>
+
+          <section aria-labelledby="phrases-title">
+            <p class="detail-number">02</p>
+            <h3 id="phrases-title">In modern use</h3>
+            <ul id="specimen-phrases" class="phrase-list"></ul>
+          </section>
+
+          <section class="notes-section" aria-labelledby="notes-title">
+            <p class="detail-number">03</p>
+            <h3 id="notes-title">Simon’s field notes</h3>
+            <label class="visually-hidden" for="simon-notes">
+              Your notes for this character
+            </label>
+            <textarea
+              id="simon-notes"
+              rows="4"
+              placeholder="What helps this character stay with you?"
+            ></textarea>
+            <p id="save-status" class="save-status" aria-live="polite">
+              Saved only on this device
+            </p>
+          </section>
+        </div>
+      </article>
+    </dialog>
+  </body>
+</html>

@@ -10,7 +10,7 @@
 A visual, personal web app that turns Chinese characters into knowledge specimens — meaning, components, ancient form, Tang usage, and Simon's own mnemonic notes.
 
 ## Status
-`scaffold-ready` — folder structure and data exist, ready for Codex to build the display layer.
+`phase-1-built` — the display layer is implemented and verified locally.
 
 ## What's Been Decided (Frozen)
 
@@ -65,3 +65,31 @@ Simon discovered this project through a serendipitous voice-to-text typo that le
 
 ---
 *Last updated: 2026-07-04 | Architect: Clyde | Builder: Codex*
+
+## Builder Session — 2026-07-04
+
+### What changed
+- Added a mobile-first character gallery in `app/index.html`.
+- Added a full specimen dialog for character, pinyin, tone, meaning,
+  components, component notes, and modern phrases.
+- Added editable Simon's notes backed by browser `localStorage`; notes remain
+  on the device and browser where they were written.
+- Kept `data/characters.json` as the only character-data source.
+- Added focused tests for the Phase 1 data contract, tone labels, and note
+  storage behavior.
+
+### Decision appended
+The original direct-file requirement conflicts with browser security around
+loading local JSON and with the intended iPhone workflow. Phase 1 is therefore
+a static hosted site with no backend or build step. It can be published through
+GitHub Pages and previewed locally with any static file server.
+
+### Verification
+- Automated tests: 5 passing.
+- Mobile browser: verified at 390 × 844 with all five cards, specimen details,
+  no horizontal overflow, and device-local note saving.
+- Desktop responsiveness is defined at 600 px and 900 px breakpoints; the
+  automated desktop browser pass was unavailable during this session.
+
+---
+*Session appended: 2026-07-04 | Builder: Codex*
