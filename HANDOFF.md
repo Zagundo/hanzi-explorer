@@ -93,3 +93,31 @@ GitHub Pages and previewed locally with any static file server.
 
 ---
 *Session appended: 2026-07-04 | Builder: Codex*
+
+## Builder Session — 2026-07-04 (Typography and intent)
+
+### What changed
+- Replaced the hero eyebrow with “Studies in form and meaning” so it remains
+  accurate as the collection grows.
+- Replaced “Look closer.” with “Origin Exploration” to state Simon's purpose
+  for the project directly.
+- Added a locally hosted, 37-glyph Noto Serif SC web-font subset so Hanzi use
+  the same typeface on macOS and iPhone.
+- Added `npm run font:subset`, which derives required Hanzi from the data and
+  static interface, downloads the official Google Fonts subset, and preserves
+  the SIL Open Font License.
+- Added a test that detects when new Hanzi require subset regeneration.
+
+### Decision appended
+Noto Serif SC is the canonical Hanzi display face. Whenever character data or
+static interface Hanzi change, run `npm run font:subset` before committing.
+Latin text continues to use the existing system-font fallbacks.
+
+### Verification
+- Automated tests: 8 passing.
+- Browser verification: 390 × 844 and 1280 × 800.
+- Confirmed Noto Serif SC loaded at both sizes, no horizontal overflow, and no
+  browser warnings or errors.
+
+---
+*Session appended: 2026-07-04 | Builder: Codex*

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Noto Serif SC Subset";
+  src: url("./fonts/noto-serif-sc-subset.woff2") format("woff2");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
 :root {
   color-scheme: light;
   --ink: #20211d;
@@ -7,8 +15,8 @@
   --line: rgba(32, 33, 29, 0.18);
   --cinnabar: #a23b2a;
   --jade: #486b5a;
-  --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Times New Roman",
-    serif;
+  --serif: "Noto Serif SC Subset", "Songti SC", "STSong",
+    "Noto Serif CJK SC", "Times New Roman", serif;
   --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue",
     sans-serif;
 }
