@@ -1,5 +1,10 @@
 import assert from "node:assert/strict";
-import { readStoredNotes, toneLabel, writeStoredNote } from "../app/app.js";
+import {
+  groupCharactersByCollection,
+  readStoredNotes,
+  toneLabel,
+  writeStoredNote,
+} from "../app/app.js";
 import test from "node:test";
 
 function createStorage(initial = {}) {
@@ -44,4 +49,23 @@ test("writeStoredNote saves and removes notes by character", () => {
   assert.deepEqual(writeStoredNote(storage, "月", "   "), {
     山: "Three peaks",
   });
+});
+
+test("characters are grouped into numbered collections in order", () => {
+  const groups = groupCharactersByCollection([
+    { character: "火", collection: 2 },
+    { character: "木", collection: 1 },
+    { character: "水", collection: 2 },
+  ]);
+
+  assert.deepEqual(
+    groups.map(([collection, characters]) => [
+      collection,
+      characters.map(({ character }) => character),
+    ]),
+    [
+      [1, ["木"]],
+      [2, ["火", "水"]],
+    ],
+  );
 });

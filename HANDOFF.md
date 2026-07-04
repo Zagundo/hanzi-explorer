@@ -94,6 +94,31 @@ GitHub Pages and previewed locally with any static file server.
 ---
 *Session appended: 2026-07-04 | Builder: Codex*
 
+## Builder Session — 2026-07-04 (Collection 02)
+
+### What changed
+- Added 水, 火, 口, 心, and 手 as five complete specimen records.
+- Added a numeric `collection` field to all ten characters.
+- Rendered Collection 01 and Collection 02 as distinct gallery groups while
+  preserving a single specimen dialog and device-local notes.
+- Expanded the Noto Serif SC subset from 37 to 72 glyphs.
+- Added collection grouping and data-contract coverage.
+
+### Decision appended
+Collections are defined in `data/characters.json` with the integer
+`collection` field. Characters retain their array order within each collection;
+collections render in ascending numeric order. Specimen numbering remains
+continuous across the atlas.
+
+### Verification
+- Automated tests: 10 passing.
+- Browser verification: 390 × 844 and 1280 × 800.
+- Confirmed two groups of five, all new cards and the 心 specimen, no horizontal
+  overflow, consistent font loading, and no browser warnings or errors.
+
+---
+*Session appended: 2026-07-04 | Builder: Codex*
+
 ## Builder Session — 2026-07-04 (Typography and intent)
 
 ### What changed

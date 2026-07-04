@@ -37,6 +37,21 @@ export function writeStoredNote(storage, character, note) {
   return notes;
 }
 
+export function groupCharactersByCollection(characters) {
+  const collections = new Map();
+
+  for (const character of characters) {
+    const collection = collections.get(character.collection) ?? [];
+    collection.push(character);
+    collections.set(character.collection, collection);
+  }
+
+  return [...collections].sort(
+    ([leftCollection], [rightCollection]) =>
+      leftCollection - rightCollection,
+  );
+}
+
 function element(tagName, className, text) {
   const node = document.createElement(tagName);
 
@@ -58,48 +73,90 @@ function replaceList(list, values, className = "") {
 }
 
 function init() {
-  const grid = document.querySelector("#character-grid");
+  const collections = document.querySelector("#character-collections");
   const status = document.querySelector("#status");
   const count = document.querySelector("#collection-count");
+  const collectionMark = document.querySelector("#collection-mark");
   const dialog = document.querySelector("#specimen-dialog");
   const closeButton = document.querySelector("#close-specimen");
   const notesField = document.querySelector("#simon-notes");
   const saveStatus = document.querySelector("#save-status");
   let selectedCharacter = null;
 
-  function renderGrid(characters) {
-    const cards = characters.map((character, index) => {
-      const item = element("li");
-      const button = element("button", "character-card");
-      button.type = "button";
-      button.setAttribute(
-        "aria-label",
-        `Open ${character.character}, ${character.pinyin}, ${character.meaning}`,
-      );
+  function createCharacterCard(character, index, total) {
+    const item = element("li");
+    const button = element("button", "character-card");
+    button.type = "button";
+    button.setAttribute(
+      "aria-label",
+      `Open ${character.character}, ${character.pinyin}, ${character.meaning}`,
+    );
 
-      const number = element(
-        "span",
-        "card-number",
-        String(index + 1).padStart(2, "0"),
-      );
-      const hanzi = element("span", "card-character", character.character);
-      hanzi.lang = "zh-Hans";
+    const number = element(
+      "span",
+      "card-number",
+      String(index + 1).padStart(2, "0"),
+    );
+    const hanzi = element("span", "card-character", character.character);
+    hanzi.lang = "zh-Hans";
 
-      const meta = element("span", "card-meta");
-      meta.append(
-        element("span", "card-pinyin", character.pinyin),
-        element("span", "card-meaning", character.meaning),
-      );
+    const meta = element("span", "card-meta");
+    meta.append(
+      element("span", "card-pinyin", character.pinyin),
+      element("span", "card-meaning", character.meaning),
+    );
 
-      button.append(number, hanzi, meta);
-      button.addEventListener("click", () =>
-        openSpecimen(character, index, characters.length),
+    button.append(number, hanzi, meta);
+    button.addEventListener("click", () =>
+      openSpecimen(character, index, total),
+    );
+    item.append(button);
+    return item;
+  }
+
+  function renderCollections(characters) {
+    const characterIndexes = new Map(
+      characters.map((character, index) => [character, index]),
+    );
+    const groups = groupCharactersByCollection(characters);
+    const groupSections = groups.map(([collection, specimens]) => {
+      const section = element("section", "collection-group");
+      const heading = element("div", "collection-group-heading");
+      const titleId = `collection-${collection}-title`;
+      const title = element(
+        "h3",
+        "",
+        `Collection ${String(collection).padStart(2, "0")}`,
       );
-      item.append(button);
-      return item;
+      const groupCount = element(
+        "p",
+        "collection-count",
+        `${specimens.length} specimens`,
+      );
+      const grid = element("ul", "character-grid");
+      title.id = titleId;
+      section.setAttribute("aria-labelledby", titleId);
+      heading.append(title, groupCount);
+      grid.append(
+        ...specimens.map((character) =>
+          createCharacterCard(
+            character,
+            characterIndexes.get(character),
+            characters.length,
+          ),
+        ),
+      );
+      section.append(heading, grid);
+      return section;
     });
 
-    grid.replaceChildren(...cards);
+    const firstCollection = groups.at(0)?.[0];
+    const lastCollection = groups.at(-1)?.[0];
+    collectionMark.textContent =
+      firstCollection === lastCollection
+        ? `Collection ${String(firstCollection).padStart(2, "0")}`
+        : `Collections ${String(firstCollection).padStart(2, "0")}–${String(lastCollection).padStart(2, "0")}`;
+    collections.replaceChildren(...groupSections);
     count.textContent = `${characters.length} specimens`;
     status.hidden = true;
   }
@@ -175,7 +232,7 @@ function init() {
         throw new Error("Character data is empty");
       }
 
-      renderGrid(characters);
+      renderCollections(characters);
     })
     .catch((error) => {
       console.error(error);

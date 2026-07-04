@@ -189,6 +189,40 @@ button {
   color: var(--cinnabar);
 }
 
+.character-collections {
+  display: grid;
+  gap: 48px;
+}
+
+.collection-group {
+  padding-top: 36px;
+  border-top: 1px solid var(--line);
+}
+
+.collection-group:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.collection-group-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 18px;
+}
+
+.collection-group-heading h3 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.collection-group-heading p {
+  margin: 0;
+}
+
 .character-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
