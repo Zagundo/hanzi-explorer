@@ -146,3 +146,24 @@ Latin text continues to use the existing system-font fallbacks.
 
 ---
 *Session appended: 2026-07-04 | Builder: Codex*
+
+## Builder Session — 2026-07-11 (Collection 03)
+
+### What changed
+- Added 米, 饭, 肉, 鱼, and 菜 as five complete specimen records.
+- Kept the existing collection model: Collection 03 is defined by
+  `collection: 3` in `data/characters.json`.
+- Expanded the Noto Serif SC subset from 72 to 109 glyphs so the new food
+  characters and related examples render consistently across devices.
+- Updated the data-contract coverage for three five-character collections.
+
+### Decision appended
+Food vocabulary can be added as another ordinary collection without changing
+the app structure. Collection grouping remains data-driven; the interface
+automatically labels the atlas as Collections 01–03.
+
+### Verification
+- Automated tests: 10 passing.
+
+---
+*Session appended: 2026-07-11 | Builder: Codex*
