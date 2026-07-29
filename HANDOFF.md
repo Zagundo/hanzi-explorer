@@ -167,3 +167,25 @@ automatically labels the atlas as Collections 01–03.
 
 ---
 *Session appended: 2026-07-11 | Builder: Codex*
+
+## Builder Session — 2026-07-30 (Collection 04)
+
+### What changed
+- Added 我, 你, 这, 那, and 有 as five complete specimen records.
+- Kept the existing collection model: Collection 04 is defined by
+  `collection: 4` in `data/characters.json`.
+- Expanded the Noto Serif SC subset from 109 to 131 glyphs so the new
+  pronoun/demonstrative characters and related examples render consistently
+  across devices.
+- Updated the data-contract coverage for four five-character collections.
+
+### Decision appended
+Core sentence-building words can be added as another ordinary collection
+without changing the app structure. The collection labels, total specimen
+count, and continuous numbering remain derived from the JSON data.
+
+### Verification
+- Automated tests: 10 passing.
+
+---
+*Session appended: 2026-07-30 | Builder: Codex*

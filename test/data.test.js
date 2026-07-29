@@ -14,14 +14,14 @@ const requiredFields = [
   "simon_notes",
 ];
 
-test("three five-character collections support the specimen display", async () => {
+test("four five-character collections support the specimen display", async () => {
   const source = await readFile(
     new URL("../data/characters.json", import.meta.url),
     "utf8",
   );
   const characters = JSON.parse(source);
 
-  assert.equal(characters.length, 15);
+  assert.equal(characters.length, 20);
   assert.deepEqual(
     characters.filter(({ collection }) => collection === 2).map(
       ({ character }) => character,
@@ -37,7 +37,14 @@ test("three five-character collections support the specimen display", async () =
   );
 
   assert.deepEqual(
-    [1, 2, 3].map((collection) => [
+    characters.filter(({ collection }) => collection === 4).map(
+      ({ character }) => character,
+    ),
+    ["我", "你", "这", "那", "有"],
+  );
+
+  assert.deepEqual(
+    [1, 2, 3, 4].map((collection) => [
       collection,
       characters.filter((character) => character.collection === collection)
         .length,
@@ -46,6 +53,7 @@ test("three five-character collections support the specimen display", async () =
       [1, 5],
       [2, 5],
       [3, 5],
+      [4, 5],
     ],
   );
 
