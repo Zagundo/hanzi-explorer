@@ -1,10 +1,20 @@
-# HANDOFF.md — Hanzi Explorer
+# Origin and Original Architect Handoff
 
-> **This file is the memory bridge between Architect and Builder.**
-> Clyde (Architect) writes it. Codex (Builder) reads it before starting work.
-> Update after every session. Never delete old decisions — append reasoning.
+> This document preserves the original project brief and the early
+> Architect-to-Builder history of Hanzi Explorer.
+>
+> Clyde (OpenClaw) created the original direction as Architect, and Codex
+> received it as Builder. It is retained as project provenance rather than as
+> the current roadmap, changelog, or implementation guide.
+>
+> Current product direction lives in `STRATEGY.md`. Current priorities live in
+> `ROADMAP.md`. Durable decisions live in `docs/DECISIONS.md`.
 
 ---
+
+> **Historical snapshot:** Everything below reflects the project at the time
+> of the original handoff. Statements about status, scope, and next steps are
+> preserved for context and are not current instructions.
 
 ## Project in One Sentence
 A visual, personal web app that turns Chinese characters into knowledge specimens — meaning, components, ancient form, Tang usage, and Simon's own mnemonic notes.
